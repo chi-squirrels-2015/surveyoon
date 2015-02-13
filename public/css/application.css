@@ -1,21 +1,14 @@
 #main-container{
-<<<<<<< HEAD
    width:1000px;
    margin:0 auto;
    background: white;
    border-radius: 5px;
-=======
-   width:1200px;
-   height:500px;
-   margin:0 auto;
-   background: grey;
->>>>>>> views
 }
 
 #header{
-	position:relative;
-	height:175px;
-	width:100%;
+  position:relative;
+  height:175px;
+  width:100%;
   background:white;
   border-top:1px solid gray;
   border-left:1px solid gray;
@@ -24,8 +17,8 @@
 
 #footer{
   position:relative;
-	height:50px;
-	width:100%;
+  height:50px;
+  width:100%;
 }
 
 IMG.displayed {
@@ -44,8 +37,8 @@ IMG.displayed {
 
 #survey-view {
 
-	width:100%;
-	float:rigth;
+  width:100%;
+  float:rigth;
 }
 
 .question-answer{
@@ -85,7 +78,6 @@ IMG.displayed {
      width: 100%;
      position: relative;
      margin:0 auto;
-
 }*/
 
 
@@ -147,8 +139,8 @@ textarea{
 
 #survey-view {
 
-	width:70%;
-	float:rigth;
+  width:70%;
+  float:rigth;
 }
 
 .question-answer{

@@ -1,0 +1,21 @@
+<div id="survey-ctnt">
+  <div id="left-btn">
+  	<a href="/surveys/new" class="btn"> Create a Survey !</a>
+  </div>	
+  <table id="survey-view">
+  <h2> Survey Created </h2>
+
+  <tr>
+    <th>Name</th> 
+    <th>edit</th>
+    <th>stats</th>
+  </tr>
+    <tr>
+    <%#@user.surveys.each do |survey| %> 	
+    <td><a href="http://localhost.com:9393/survey/<%#=survey.id%>"><%#=survey.title%>Kevin Survey</a>
+    <td><a href="http://localhost.com:9393/edit/<%#=survey.id%>">edit</a></td>
+    <td><a href="http://localhost.com:9393/stats/<%#=survey.id%>">stats</a></td>
+    </tr>
+    <%#end%>
+</table>
+</div>	
