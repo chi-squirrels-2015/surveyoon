@@ -15,9 +15,25 @@
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script src="/js/application.js"></script>
 
-  <title></title>
+  <title>Survey Yoon Best surveys in the yoonworld</title>
 </head>
 <body>
+  <div id="main-container">
+    <div id="header"> 
+      <a href="/"> <h1> SurveyYoon </h1> </a>
+     <% if @user %>  
+      <a href="/logout">logout</a>
+     <% end %>  
+    </div>
+    <% if @user %>
+    <div id="welcome">
+      Welcome to SurveyYoon <%= @user.username %>
+    </div>
+    <%end %>   
   <%= yield %>
+ <div id="footer">
+  Yoon Inc. Fortune 500 Compagny.
+ </div> 
+</div> 
 </body>
 </html>
