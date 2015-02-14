@@ -21,7 +21,7 @@
   <div id="main-container">
 
     <div id="header">
-      <a href="/surveys"> <h1> Surveyoon </h1> </a>
+      <a href="/surveys"> <img class="displayed" src="http://i.imgur.com/DxKxwlS.png"></a>
      <% if session[:user_id] %>  <!-- Kevin edit -->
       <a id="sign-out" href="/sessions/<%= session[:user_id] %>">logout</a>
      <% end %>
@@ -33,7 +33,7 @@
     </div> -->
     <%# end %>
 
-  <%= yield %>
+ <div id="centerthatshit"> <%= yield %> </div>
 
  <div id="footer">
   Yoon Inc. Fortune 500 Company.

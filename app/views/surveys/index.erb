@@ -1,16 +1,14 @@
+<h2> Surveys Created </h2>
 <div id="survey-ctnt">
   <div id="left-btn">
     <a href="/surveys/new" class="btn"> Create a Survey !</a>
   </div>
+<div id="survey-table-container">
   <table id="survey-view">
-    <h2> Surveys Created </h2>
-
     <tr>
       <th>Name</th>
-      <th>edit</th>
       <th>stats</th>
     </tr>
-    <tr>
       <% @user.surveys.each do |survey| %> <!-- Kevin Edit -->
       <td><a href="/surveys/<%=survey.id%>"><%=survey.title%></a>
         <td><a href="/<%#=survey.id%>">edit</a></td>
@@ -18,4 +16,5 @@
       </tr>
       <%end%>
     </table>
+   </div> 
   </div>
