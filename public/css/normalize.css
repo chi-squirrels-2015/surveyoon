@@ -15,9 +15,13 @@ html {
 /**
  * Remove default margin.
  */
+ * {
+ font-family: Georgia, "Times New Roman", Times, serif;
+}
 
 body {
   margin: 0;
+  font: Georgia, "Times New Roman", Times, serif;
 }
 
 /* HTML5 display definitions

@@ -1,13 +1,18 @@
 #main-container{
-   width:1200px;
+   width:1000px;
    margin:0 auto;
-   background: gray;
+   background: white;
+   border-radius: 5px;
 }
 
 #header{
 	position:relative;
-	height:100px;
+	height:175px;
 	width:100%;
+  background:white;
+  border-top:1px solid gray;
+  border-left:1px solid gray;
+  border-right:1px solid gray;
 
 }
 
@@ -16,18 +21,25 @@
 	height:50px;
 	width:100%;
 
+
+}
+IMG.displayed {
+    display: block;
+    margin-left: auto;
+    margin-right: auto 
 }
 
 #index-contrainer{
    position:relative;
    margin:0 auto;
+   width:250px;
 
 
 }
 
 #survey-view {
 
-	width:70%;
+	width:100%;
 	float:rigth;
 }
 
@@ -64,6 +76,15 @@
   text-decoration: none;
 }
 
+/*#centerthatshit {
+     width: 100%;
+     position: relative;
+     margin:0 auto;
+
+}*/
+
+
+
  /*For viewing the survey on survey/view  KEVIN EDITED */
 
 input[type="radio"] {
@@ -79,3 +100,34 @@ input[type="radio"] {
   border: 1px solid black;
 }
 
+
+input {
+ border: 1px solid #DADADA;
+    color: #888;
+    height: 30px;
+    margin-bottom: 16px;
+    margin-right: 6px;
+    margin-top: 2px;
+    outline: 0 none;
+    padding: 3px 3px 3px 5px;
+    font-size: 12px;
+    line-height:15px;
+    box-shadow: inset 0px 1px 4px #ECECEC;
+    -moz-box-shadow: inset 0px 1px 4px #ECECEC;
+    -webkit-box-shadow: inset 0px 1px 4px #ECECEC;
+
+}
+
+
+textarea{
+    padding: 5px 3px 3px 5px;
+}
+
+#sign-out{
+  float:right;
+}
+
+#survey-table-container{
+
+  width:200px;
+}
