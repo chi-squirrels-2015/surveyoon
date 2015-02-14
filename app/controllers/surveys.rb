@@ -36,11 +36,23 @@ post "/questions" do
     erb :"surveys/new"
   end
 
-  # We want append a new form (but we can render this in the JS app file using jQuery)
-  # We want to send the Question and the Question Choices
-  # {question: question.query, choices: question.answers }.to_json
-  # question.answers == [[id: 1, choice: , timestamp ...], [id: 2, choice: , timestamp: ...], ....]
+end
 
+put "/questions/:question_id" do
+  @question = Question.update(params[:question_id], query: params[:query])
+  # Another way to get around this line?
+  Answer.where(question_id: params[:question_id]).delete_all
+
+  params[:answer].each do |answer|
+    @question.answers << Answer.create(choice: answer)
+  end
+
+  puts
+  if request.xhr?
+    erb :"surveys/_saved_question", locals: { question: @question }, layout: false
+  else
+    erb :"surveys/edit"
+  end
 end
 
 get "/surveys/:survey_id" do # Kevin Edited
@@ -58,7 +70,7 @@ post "/responses" do
   current_survey.save
 
   params.each do |q,a|
-    Response.create(question_id:q.to_i,answer_id:a.to_i,              survey_id: current_survey.id)
+    Response.create(question_id: q.to_i, answer_id: a.to_i, survey_id: current_survey.id)
   end
 
   erb :"surveys/_message"
@@ -69,6 +81,11 @@ get "/surveys/:survey_id/stats" do
   @current_survey = Survey.find(params[:survey_id])
   @responses = @current_survey.responses
   erb :"surveys/stats"
+end
+
+get "/surveys/:survey_id/edit" do
+  @current_survey = Survey.find(params[:survey_id])
+  erb :"surveys/edit"
 end
 
 
