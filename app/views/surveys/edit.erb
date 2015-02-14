@@ -1,0 +1,28 @@
+<h1><%= @current_survey.title %></h1>
+
+<div id="editing_confirmation">
+  <h3>Editing this survey after responses have been taken will make your statistics incorrect. Are you sure you want to continue?</h3>
+  <button id="survey_edit_confirm_button">Confirm</button>
+</div>
+
+
+<div class="question-answer">
+  <% @current_survey.questions.each do |question| %>
+
+  <form id="questions_and_answers_form" method="POST" action="/questions/<%= question.id %>">
+    <input type="hidden" name="_method" value="put"/>
+    <p><textarea rows="3" cols="20" name="query" placeholder="Your question here"><%= question.query %></textarea></p>
+
+    <div id="answer_choices_div">
+      <% question.answers.each do |answer| %>
+      <p><input type='text' name='answer[]' placeholder='Choice' value=<%= answer.choice %>><a id='delete_answer' href='#'><img src='https://www.chicobag.com/images/minus_icon.gif'></a></p>
+      <% end %>
+    </div>
+
+    <p><a href="#" class="btn" id="add_answer_option">Add Answer Choices</a></p>
+    <p><input type="submit" value="Save Question Edits"></p>
+  </form>
+
+<% end %>
+</div>
+<p><a href="/surveys">Back to Home Page</a></p>
