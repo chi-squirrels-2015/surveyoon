@@ -60,7 +60,8 @@ post "/responses" do
   params.each do |q,a|
     Response.create(question_id:q.to_i,answer_id:a.to_i,              survey_id: current_survey.id)
   end
-  redirect "/surveys"
+
+  erb :"surveys/_message"
 end
 
 
