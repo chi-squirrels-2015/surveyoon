@@ -29,9 +29,24 @@ $(document).ready(function() {
     });
 
     request.done(function(response) {
-      $("#create_survey_form").hide();
-      $("#create-frm").prepend(response.title);
-      $(".question-answer").css("display", "block");
+      $("#for_appending").append(response);
+      $("#questions_and_answers_form").each(function(){
+        this.reset();
+      })
+    })
+  })
+
+    $("#create-frm").on('click', '#submit_survey', function(event) {
+    event.preventDefault();
+    var payload = $(this).parents("form").serialize();
+    var request = $.ajax({
+      url: '/questions',
+      method: 'post',
+      data: payload
+    });
+
+    request.done(function(response) {
+      window.location.replace("/surveys");
     })
   })
 

@@ -26,15 +26,12 @@ end
 post "/questions" do
   @question = Question.create(survey_id: session[:survey_id], query: params[:query])
   params[:answer].each do |answer|
-    @question.answers << Answer.create(answer)
+    @question.answers << Answer.create(choice: answer)
   end
 
   if request.xhr?
     @survey = Survey.find(session[:survey_id])
-    erb :"surveys/new"
-    # erb :"surveys/_saved_question", locals: { survey: @survey, question: @question }, layout: false
-    # previous form will disappear and be replaced by text/partial << will be in the same div
-    # append new form
+    erb :"surveys/_saved_question", locals: { survey: @survey, question: @question }, layout: false
   else
     erb :"surveys/new"
   end
