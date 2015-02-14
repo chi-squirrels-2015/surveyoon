@@ -4,7 +4,7 @@ get "/surveys" do
   @user = User.find(session[:user_id])
   @surveys = Survey.where(creator_id: session[:user_id])
 
-  erb :"surveys/view"
+  erb :"surveys/index"
 end
 
 get "/surveys/new" do
@@ -19,19 +19,19 @@ post "/surveys" do
   @survey = Survey.create(title: params[:title], creator_id: session[:user_id])
   session[:survey_id] = @survey.id
   content_type :json
-  { title: @survey.title }
+  { title: @survey.title }.to_json
+  # erb :"surveys/new"
 end
 
 post "/questions" do
   @question = Question.create(survey_id: session[:survey_id], query: params[:query])
   params[:answer].each do |answer|
-    @question.answers << Answer.create(answer)
+    @question.answers << Answer.create(choice: answer)
   end
 
   if request.xhr?
-    erb :"surveys/_saved_question", locals { survey: @survey, question: @question }, layout: false
-    # previous form will disappear and be replaced by text/partial << will be in the same div
-    # append new form
+    @survey = Survey.find(session[:survey_id])
+    erb :"surveys/_saved_question", locals: { survey: @survey, question: @question }, layout: false
   else
     erb :"surveys/new"
   end

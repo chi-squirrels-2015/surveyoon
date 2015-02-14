@@ -1,7 +1,53 @@
 $(document).ready(function() {
-  // This is called after the document has loaded in its entirety
-  // This guarantees that any elements we bind to will exist on the page
-  // when we try to bind to them
+  $("#create_survey_button").on('click', function(event) {
+    event.preventDefault();
+    var request = $.ajax({
+      url: '/surveys',
+      method: 'post',
+      data: $(this).parents("form").serialize()
+    });
 
-  // See: http://docs.jquery.com/Tutorials:Introducing_$(document).ready()
+    request.done(function(response) {
+      $("#create_survey_form").hide();
+      $("#create-frm").prepend(response.title);
+      $(".question-answer").css("display", "block");
+    })
+  })
+
+  $("#create-frm").on('click', '#add_answer_option', function(event) {
+    event.preventDefault();
+    $("#answer_choices_div").append("<input type='text' name='answer[]' placeholder='Choice'><img src='https://www.chicobag.com/images/minus_icon.gif'></p>");
+  })
+
+  $("#create-frm").on('click', '#add_question', function(event) {
+    event.preventDefault();
+    var payload = $(this).parents("form").serialize();
+    var request = $.ajax({
+      url: '/questions',
+      method: 'post',
+      data: payload
+    });
+
+    request.done(function(response) {
+      $("#for_appending").append(response);
+      $("#questions_and_answers_form").each(function(){
+        this.reset();
+      })
+    })
+  })
+
+    $("#create-frm").on('click', '#submit_survey', function(event) {
+    event.preventDefault();
+    var payload = $(this).parents("form").serialize();
+    var request = $.ajax({
+      url: '/questions',
+      method: 'post',
+      data: payload
+    });
+
+    request.done(function(response) {
+      window.location.replace("/surveys");
+    })
+  })
+
 });
