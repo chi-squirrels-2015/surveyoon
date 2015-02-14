@@ -3,7 +3,7 @@ class User < ActiveRecord::Base
   has_many :questions, through: :surveys
   has_many :answers, through: :questions
 
-  validates :email, uniqueness: true
+  validates :username, uniqueness: true
 
   def password
     BCrypt::Password.new(self.password_hash)
@@ -12,6 +12,7 @@ class User < ActiveRecord::Base
   def password=(input)
     self.password_hash = BCrypt::Password.create(input)
   end
+
 
   def self.authenticate(username, password_input)
     user = User.find_by(username: username)
