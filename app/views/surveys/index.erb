@@ -7,18 +7,15 @@
   <table id="survey-view">
     <tr>
       <th>Name</th>
-      <th>stats</th>
+      <th>Edit</th>
+      <th>Share</th>
+      <th>Stats</th>
     </tr>
       <% @user.surveys.each do |survey| %> <!-- Kevin Edit -->
       <td><a href="/surveys/<%=survey.id%>"><%=survey.title%></a>
-<<<<<<< HEAD
         <td><a href="/surveys/<%=survey.id%>/edit">edit</a></td>
-        <td><a href="/surveys/<%=survey.id%>/stats">stats</a></td>
-=======
-        <td><a href="/<%#=survey.id%>">edit</a></td>
         <td><a href="/surveys/<%= survey.id %>/share?survey_key=<%= survey.random_code %>">share</a></td>
         <td><a href="/surveys/<%= survey.id %>/stats">stats</a></td>
->>>>>>> able to generate unique and safe URL for people to take survey without logging in
       </tr>
       <%end%>
     </table>

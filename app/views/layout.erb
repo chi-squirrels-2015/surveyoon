@@ -21,28 +21,19 @@
   <div id="main-container">
     <div id="header">
       <a href="/"> <h1> SurveyYoon </h1> </a>
-     <% if @user %>  
+      <% if @user %>
       <a href="/logout">logout</a>
-     <% end %>  
+      <% end %>
     </div>
     <% if @user %>
     <div id="welcome">
       Welcome to SurveyYoon <%= @user.username %>
     </div>
-<<<<<<< HEAD
     <%end %>
- </div>
-  <%= yield %>
- <div id="footer">
-  Yoon Inc. Fortune 500 Compagny.
- </div>
-=======
-    <%end %>   
-  <%= yield %>
- <div id="footer">
-  Yoon Inc. Fortune 500 Compagny.
- </div> 
-</div> 
->>>>>>> views
+    <%= yield %>
+    <div id="footer">
+      Yoon Inc. Fortune 500 Compagny.
+    </div>
+  </div>
 </body>
 </html>
