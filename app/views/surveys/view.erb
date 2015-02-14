@@ -2,7 +2,7 @@
 
 <div class="survey_layout">
   <h1><%= @survey.title %></h1>
-  <form method="POST" action="/NEED TO FIGURE OUT PATH">
+  <form method="POST" action="/responses">
     <% @survey.questions.each do |question| %>
     <h3><%= question.query %></h3>
     <% question.answers.each do |answer| %>

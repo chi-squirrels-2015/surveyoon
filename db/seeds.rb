@@ -41,3 +41,4 @@ Answer.create(question: q5, choice: "red")
 Answer.create(question: q5, choice: "blue")
 Answer.create(question: q5, choice: "white")
 Answer.create(question: q5, choice: "none of the above")
+
