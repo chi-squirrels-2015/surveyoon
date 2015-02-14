@@ -65,6 +65,13 @@ post "/responses" do
 end
 
 
+get "/surveys/:survey_id/stats" do
+  @current_survey = Survey.find(params[:survey_id])
+  @responses = @current_survey.responses
+  erb :"surveys/stats"
+end
+
+
 
 
 

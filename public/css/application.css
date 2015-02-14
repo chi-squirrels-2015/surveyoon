@@ -70,3 +70,12 @@ input[type="radio"] {
   margin-left: 10px;
   margin-right: 5px;
 }
+
+#stats_table {
+  border: 1px solid black;
+}
+
+#stats_table td {
+  border: 1px solid black;
+}
+
