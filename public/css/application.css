@@ -9,7 +9,7 @@
 	position:relative;
 	height:100px;
 	width:100%;
-    
+
 }
 
 #footer{
@@ -63,4 +63,11 @@
   background-image: -o-linear-gradient(top, #a8a8a8, #b8b8b8);
   background-image: linear-gradient(to bottom, #a8a8a8, #b8b8b8);
   text-decoration: none;
+}
+
+ /*For viewing the survey on survey/view  KEVIN EDITED */
+
+input[type="radio"] {
+  margin-left: 10px;
+  margin-right: 5px;
 }
