@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- 
+  <!--
     normalize.css removes cross-browser differences in defaults, e.g.,
     differences in how form elements appear between Firefox and IE
     See: http://necolas.github.com/normalize.css/
@@ -19,21 +19,21 @@
 </head>
 <body>
   <div id="main-container">
-    <div id="header"> 
+    <div id="header">
       <a href="/"> <h1> SurveyYoon </h1> </a>
-     <% if @user %>  
+     <% if session[:user_id] %>
       <a href="/logout">logout</a>
-     <% end %>  
+     <% end %>
     </div>
-    <% if @user %>
+    <% if session[:user_id] %>
     <div id="welcome">
-      Welcome to SurveyYoon <%= @user.username %>
+      Welcome to SurveyYoon <%#= @user.username %>
     </div>
-    <%end %>   
+    <%end %>
   <%= yield %>
  <div id="footer">
   Yoon Inc. Fortune 500 Compagny.
- </div> 
-</div> 
+ </div>
+</div>
 </body>
 </html>

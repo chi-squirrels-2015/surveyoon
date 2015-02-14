@@ -1,7 +1,8 @@
 post '/sessions' do
   # sign in
-  @username = params[:username]
-  user = User.authenticate(@username, params[:password]) # need to check with model of User to figure out if this is in there
+  # user = User.params[:email]
+  user = User.authenticate(params[:username], params[:password]) # need to check with model of User to figure out if this is in there
+
   if user
     session[:user_id] = user.id
     redirect "/surveys"
