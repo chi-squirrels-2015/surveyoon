@@ -1,0 +1,16 @@
+<!-- Kevin Edit -->
+
+<div class="survey_layout">
+  <h1><%= @survey.title %></h1>
+  <form method="POST" action="/NEED TO FIGURE OUT PATH">
+    <% @survey.questions.each do |question| %>
+    <h3><%= question.query %></h3>
+    <% question.answers.each do |answer| %>
+    <input type="radio" name=<%= question.id %> value=<%= answer.id %>><%= answer.choice %>
+    <% end %>
+    <br>
+    <% end %>
+    <br>
+    <input type="submit" value="Submit Response">
+  </form>
+</div>

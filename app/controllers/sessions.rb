@@ -1,19 +1,18 @@
 post '/sessions' do
   # sign in
-  # user = User.params[:email]
-  user = User.authenticate(params[:username], params[:password]) # need to check with model of User to figure out if this is in there
+  user = User.authenticate(params[:username], params[:password])
 
   if user
     session[:user_id] = user.id
     redirect "/surveys"
   else
-    erb :index
+    erb :login
   end
 end
 
-delete '/sessions/:id' do
+delete '/sessions/:id' do # Kevin Edit NOTE: This is invoked via AJAX
   # sign out
-  return 401 unless params[:id] == session[:user_id]
+  return 401 unless params[:id].to_i == session[:user_id].to_i
   session.clear
   200
 end
