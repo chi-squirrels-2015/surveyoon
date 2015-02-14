@@ -43,9 +43,9 @@ post "/questions" do
 
 end
 
-get "/surveys/:survey_id" do
+get "/surveys/:survey_id" do # Kevin Edited
   @survey = Survey.find(params[:survey_id])
-  erb :"surveys/survey_view"
+  erb :"surveys/view"
 end
 
 def ensure_logged_in
