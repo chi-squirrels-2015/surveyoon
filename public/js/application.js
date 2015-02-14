@@ -16,7 +16,7 @@ $(document).ready(function() {
 
   $("#create-frm").on('click', '#add_answer_option', function(event) {
     event.preventDefault();
-    $("#answer_choices_div").append("<input type='text' name='answer[]' placeholder='Choice'><img src='https://www.chicobag.com/images/minus_icon.gif'></p>");
+    $("#answer_choices_div").append("<p><input type='text' name='answer[]' placeholder='Choice'><a id='delete_answer' href='#'><img src='https://www.chicobag.com/images/minus_icon.gif'></a></p>");
   })
 
   // Kevin Edit
@@ -38,22 +38,14 @@ $(document).ready(function() {
     })
   })
 
-  // $("#create-frm").on('click', '#add_question', function(event) {
-  //   event.preventDefault();
-  //   var payload = $(this).parents("form").serialize();
-  //   var request = $.ajax({
-  //     url: '/questions',
-  //     method: 'post',
-  //     data: payload
-  //   });
-
-  //   request.done(function(response) {
-  //     $("#for_appending").append(response);
-  //     $("#questions_and_answers_form").each(function(){
-  //       this.reset();
-  //     })
-  //   })
-  // })
+  $(".question-answer").on('click', '#delete_answer', function(event) {
+    event.preventDefault();
+    console.log("click has been received");
+    // console.log($(this));
+    // console.log($(this).parent("p"));
+    $(this).parent("p").remove();
+    $(this).remove();
+  })
 
   $("#create-frm").on('click', '#submit_survey', function(event) {
     event.preventDefault();
