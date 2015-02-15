@@ -21,9 +21,9 @@ $(document).ready(function() {
   })
 
   // Kevin Edit
-  $("#create-frm").on('submit', '#questions_and_answers_form', function(event) {
+  $("#create-frm").on('click', '#add_question', function(event) {
     event.preventDefault();
-    var payload = $(this).serialize();
+    var payload = $(this).parents("form").serialize();
     var request = $.ajax({
       url: '/questions',
       method: 'post',
@@ -40,7 +40,6 @@ $(document).ready(function() {
 
   $(".question-answer").on('click', '#delete_answer', function(event) {
     event.preventDefault();
-    console.log("click has been received");
     $(this).parent("p").remove();
     $(this).remove();
   })
