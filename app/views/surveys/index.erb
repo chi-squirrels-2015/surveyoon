@@ -24,7 +24,7 @@
               <input class="manipulate-survey-buttons" type="submit" value="Delete">
             </form>
           </td>
-          <td><a class="manipulate-survey-buttons" href="/surveys/<%= survey.id %>/share?survey_key=<%= survey.random_code %>">Share</a></td>
+          <td><a class="manipulate-survey-buttons" href="/surveys/<%= survey.id %>/share?survey_key=#<%= survey.random_code %>">Share</a></td>
           <td><a class="manipulate-survey-buttons" href="/surveys/<%= survey.id %>/stats">Stats</a></td>
         <%end%>
       </tr>
