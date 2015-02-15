@@ -40,5 +40,9 @@ Answer.create(question: q5, choice: "yellow")
 Answer.create(question: q5, choice: "red")
 Answer.create(question: q5, choice: "blue")
 Answer.create(question: q5, choice: "white")
+<<<<<<< HEAD
 Answer.create(question: q5, choice: "none of the above")
 
+=======
+Answer.create(question: q5, choice: "none of the above")
+>>>>>>> created models, migration, associations, and seed

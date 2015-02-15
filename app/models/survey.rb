@@ -4,4 +4,9 @@ class Survey < ActiveRecord::Base
   has_many :questions
   has_many :answers, through: :questions
   has_many :responses
+
+  def generate_code
+    code = SecureRandom.urlsafe_base64
+    self.update(random_code: code)
+  end
 end
