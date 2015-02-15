@@ -1,4 +1,5 @@
 $(document).ready(function() {
+
   $("#create_survey_button").on('click', function(event) {
     event.preventDefault();
     var request = $.ajax({
@@ -9,7 +10,7 @@ $(document).ready(function() {
 
     request.done(function(response) {
       $("#create_survey_form").hide();
-      $("#create-frm").prepend(response.title);
+      $("#create-frm").prepend("<h3> Survey: " + response.title + "</h3>");
       $(".question-answer").css("display", "block");
     })
   })
@@ -31,7 +32,7 @@ $(document).ready(function() {
     });
 
     request.done(function(response) {
-      $("#for_appending").append(response);
+      $("#for_appending").append("<h4>" + response + "</h4>");
       $("#questions_and_answers_form").each(function(){
         this.reset();
       })

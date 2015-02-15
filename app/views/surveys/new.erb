@@ -1,8 +1,12 @@
-<div id="create-frm">
+<h3 id="greeting">Hello, <%= @user.username %>!</h3>
+<hr></hr>
+<br>
 
+<div id="create-frm">
   <div id="create_survey_form">
+    <h4>Please enter a title for your survey.</h4>
     <form method="post" action="/surveys">
-     <p><input type="text" name="title"  placeholder="title"></p>
+     <p><input type="text" name="title"  placeholder="Survey title"></p>
      <p><input id="create_survey_button" type="submit" value="Start"></p>
    </form>
  </div>

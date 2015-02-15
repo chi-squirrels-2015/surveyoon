@@ -11,6 +11,12 @@ get "/surveys/new" do
   erb :"surveys/new"
 end
 
+delete "/surveys/:survey_id" do
+  @survey = Survey.find(params[:survey_id])
+  @survey.destroy
+  redirect "/surveys"
+end
+
 
 post "/surveys" do
   @survey = Survey.create(title: params[:title], creator_id: session[:user_id])
