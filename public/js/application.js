@@ -17,13 +17,13 @@ $(document).ready(function() {
   // Kevin Edit: I changed it to "document" instead of "#create-frm"
   $(document).on('click', '#add_answer_option', function(event) {
     event.preventDefault();
-    $("#answer_choices_div").append("<p><input type='text' name='answer[]' placeholder='Choice'><a id='delete_answer' href='#'><img src='https://www.chicobag.com/images/minus_icon.gif'></a></p>");
+    $(this).parents("form").children("div").append("<p><input type='text' name='answer[]' placeholder='Choice'><a id='delete_answer' href='#'><img src='https://www.chicobag.com/images/minus_icon.gif'></a></p>");
   })
 
   // Kevin Edit
-  $("#create-frm").on('submit', '#questions_and_answers_form', function(event) {
+  $("#create-frm").on('click', '#add_question', function(event) {
     event.preventDefault();
-    var payload = $(this).serialize();
+    var payload = $(this).parents("form").serialize();
     var request = $.ajax({
       url: '/questions',
       method: 'post',
@@ -40,7 +40,6 @@ $(document).ready(function() {
 
   $(".question-answer").on('click', '#delete_answer', function(event) {
     event.preventDefault();
-    console.log("click has been received");
     $(this).parent("p").remove();
     $(this).remove();
   })
