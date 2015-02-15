@@ -1,10 +1,6 @@
 pizzalover = User.create!(username: "pizzalover", email: "jane@mail.com", password: "password")
 
-<<<<<<< HEAD
 colors = Survey.create!(title: "Colors", creator_id: 1, random_code: SecureRandom.urlsafe_base64)
-=======
-colors = Survey.create!(title: "Colors", creator_id: 1)
->>>>>>> created models, migration, associations, and seed
 
 q1 = Question.create!(survey: colors, query: "What's your favorite color?")
 
