@@ -17,7 +17,7 @@ $(document).ready(function() {
   // Kevin Edit: I changed it to "document" instead of "#create-frm"
   $(document).on('click', '#add_answer_option', function(event) {
     event.preventDefault();
-    $("#answer_choices_div").append("<p><input type='text' name='answer[]' placeholder='Choice'><a id='delete_answer' href='#'><img src='https://www.chicobag.com/images/minus_icon.gif'></a></p>");
+    $(this).parents("form").children("div").append("<p><input type='text' name='answer[]' placeholder='Choice'><a id='delete_answer' href='#'><img src='https://www.chicobag.com/images/minus_icon.gif'></a></p>");
   })
 
   // Kevin Edit
