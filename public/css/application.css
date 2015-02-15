@@ -1,3 +1,20 @@
+/* ==== LAYOUT ERB ==== */
+
+@font-face {
+  font-family: "Hallo";
+  src: url(Hallosans.eot);
+  src: local('Hallo sans'), url(HallosansBlack.otf) format('opentype');
+}
+
+* {
+  font-family: Georgia;
+  font-size: 15px;
+}
+
+a {
+  text-decoration: none;
+}
+
 #main-container{
    width:1000px;
    margin:0 auto;
@@ -19,59 +36,139 @@
   position:relative;
   height:50px;
   width:100%;
+  width: 1000px;
+  margin: 0px auto;
+  background: white;
+}
+
+#header{
+  position: relative;
+  height: 120px;
+  width: 100%;
+  background: white;
+}
+
+#header h1 {
+  margin: 10px auto;
+  padding-top: 10px;
+  font-family: "Hallo";
+  font-size: 70px;
+  text-decoration: none;
+}
+
+#footer{
+  position: relative;
+  height: 50px;
+  width: 100%;
+}
+
+#sign-out {
+  top: 0px;
 }
 
 IMG.displayed {
-    display: block;
-    margin-left: auto;
-    margin-right: auto
+  display: block;
+  margin-left: auto;
+  margin-right: auto
 }
 
-#index-contrainer{
-   position:relative;
-   margin:0 auto;
-   width:250px;
+
+/* === LOGIN AND SIGNUP === */
+
+#login-form input {
+  font-family: "Hallo";
+  border: 1px solid #DADADA;
+  border-radius: 2px;
+  color: #888;
+  height: 30px;
+  width: 350px;
+  margin-bottom: 5px;
+  margin-right: 6px;
+  margin-top: 2px;
+  outline: 0 none;
+  padding: 3px 3px 3px 5px;
+  font-size: 20px;
+  line-height:15px;
+  box-shadow: inset 0px 1px 2px #ECECEC;
+  -moz-box-shadow: inset 0px 1px 4px #ECECEC;
+  -webkit-box-shadow: inset 0px 1px 4px #ECECEC;
+}
+
+#signup-form input {
+  font-family: "Hallo";
+  border: 1px solid #DADADA;
+  border-radius: 2px;
+  color: #888;
+  height: 30px;
+  width: 350px;
+  margin-bottom: 5px;
+  margin-right: 6px;
+  margin-top: 2px;
+  outline: 0 none;
+  padding: 3px 3px 3px 5px;
+  font-size: 20px;
+  line-height:15px;
+  box-shadow: inset 0px 1px 2px #ECECEC;
+  -moz-box-shadow: inset 0px 1px 4px #ECECEC;
+  -webkit-box-shadow: inset 0px 1px 4px #ECECEC;
+}
+
+#login-signup-container {
+  margin-top: -10px;
+}
+
+h3 {
+  font-family: "Hallo";
+  font-size: 22px;
+}
 
 
+
+/* === INDEX PAGE AFTER LOGIN === */
+
+h2 {
+  font-size: 30px;
+  width: 50%;
+  padding-left: 10px;
 }
 
 #survey-view {
-
-  width:100%;
-  float:rigth;
+  width: 70%;
+  float: left;
 }
 
-.question-answer{
-   display: none;
-
+#survey-view th {
+  padding: 10px;
+  border-bottom: 1px solid black;
 }
 
-.btn {
+#survey-view td {
+  padding: 10px;
+  text-align: center;
+}
+
+#survey-view tr:nth-child(even) {
+  background-color: #EDEDEE;
+}
+
+#create-survey-button {
+  display: inline-block;
+  vertical-align: bottom;
+
+  -webkit-border-radius: 20;
+  -moz-border-radius: 20;
+  border-radius: 5px;
   background: #e503fa;
-  background-image: -webkit-linear-gradient(top, #e503fa, #c400ad);
-  background-image: -moz-linear-gradient(top, #e503fa, #c400ad);
-  background-image: -ms-linear-gradient(top, #e503fa, #c400ad);
-  background-image: -o-linear-gradient(top, #e503fa, #c400ad);
-  background-image: linear-gradient(to bottom, #e503fa, #c400ad);
-  -webkit-border-radius: 28;
-  -moz-border-radius: 28;
-  border-radius: 28px;
-  font-family: Arial;
-  color: #000000;
   font-size: 20px;
   padding: 10px 20px 10px 20px;
   text-decoration: none;
-  float:left;
+  float: right;
+  margin-right: 50px;
+  margin-bottom: 0px;
 }
 
-.btn:hover {
-  background: #a8a8a8;
-  background-image: -webkit-linear-gradient(top, #a8a8a8, #b8b8b8);
-  background-image: -moz-linear-gradient(top, #a8a8a8, #b8b8b8);
-  background-image: -ms-linear-gradient(top, #a8a8a8, #b8b8b8);
-  background-image: -o-linear-gradient(top, #a8a8a8, #b8b8b8);
-  background-image: linear-gradient(to bottom, #a8a8a8, #b8b8b8);
-  text-decoration: none;
+#create-survey-button span {
+  font-family: Futura;
 }
 
 /*#centerthatshit {
@@ -80,9 +177,15 @@ IMG.displayed {
      margin:0 auto;
 }*/
 
+.question-answer{
+  display: none;
+}
 
 
- /*For viewing the survey on survey/view  KEVIN EDITED */
+
+
+
+/* For viewing the survey on survey/view  KEVIN EDITED */
 
 input[type="radio"] {
   margin-left: 10px;
@@ -98,57 +201,98 @@ input[type="radio"] {
 }
 
 
-input {
- border: 1px solid #DADADA;
-    color: #888;
-    height: 30px;
-    margin-bottom: 16px;
-    margin-right: 6px;
-    margin-top: 2px;
-    outline: 0 none;
-    padding: 3px 3px 3px 5px;
-    font-size: 12px;
-    line-height:15px;
-    box-shadow: inset 0px 1px 4px #ECECEC;
-    -moz-box-shadow: inset 0px 1px 4px #ECECEC;
-    -webkit-box-shadow: inset 0px 1px 4px #ECECEC;
-
-}
+/*input {
+  font-family: "Hallo";
+  border: 1px solid #DADADA;
+  border-radius: 5px;
+  color: #888;
+  height: 40px;
+  width: 300px;
+  margin-bottom: 5px;
+  margin-right: 6px;
+  margin-top: 2px;
+  outline: 0 none;
+  padding: 3px 3px 3px 5px;
+  font-size: 20px;
+  line-height:15px;
+  box-shadow: inset 0px 1px 4px #ECECEC;
+  -moz-box-shadow: inset 0px 1px 4px #ECECEC;
+  -webkit-box-shadow: inset 0px 1px 4px #ECECEC;
+}*/
 
 
 textarea{
-    padding: 5px 3px 3px 5px;
+  padding: 5px 3px 3px 5px;
 }
 
 #sign-out{
   float:right;
 }
 
-#survey-table-container{
-
+/*#survey-table-container{
   width:200px;
-}
+}*/
 
+/*#index-contrainer{
+  position:relative;
+  margin:0 auto;
+}*/
 
-#index-contrainer{
-   position:relative;
-   margin:0 auto;
-
-
-}
-
-#survey-view {
-
+/*#survey-view {
   width:70%;
   float:rigth;
-}
+}*/
 
 .question-answer{
-   display: none;
-
+  display: none;
 }
 
-.btn {
+
+
+
+
+
+
+/* ====================================== */
+/* === PREVIOUSLY STYLING FOR BUTTONS === */
+/* ====================================== */
+
+/*.btn {
+  background: #e503fa;
+  background-image: -webkit-linear-gradient(top, #e503fa, #c400ad);
+  background-image: -moz-linear-gradient(top, #e503fa, #c400ad);
+  background-image: -ms-linear-gradient(top, #e503fa, #c400ad);
+  background-image: -o-linear-gradient(top, #e503fa, #c400ad);
+  background-image: linear-gradient(to bottom, #e503fa, #c400ad);
+  -webkit-border-radius: 28;
+  -moz-border-radius: 28;
+  border-radius: 28px;
+  font-family: Arial;
+  color: #000000;
+  font-size: 20px;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+  float:left;
+>>>>>>> added css for login page and index page: new font for 'SurveYoon' header, styled forms for login and signup, styled table displaying all created surveys, changed layout for index page to display button to the right of the table. NEED TO WORK ON: adding some background colors, selecting better default font. NEED TO WORK ON: views for create new survey, edit, share, and stats
+}
+
+.btn:hover {
+  background: #a8a8a8;
+  background-image: -webkit-linear-gradient(top, #a8a8a8, #b8b8b8);
+  background-image: -moz-linear-gradient(top, #a8a8a8, #b8b8b8);
+  background-image: -ms-linear-gradient(top, #a8a8a8, #b8b8b8);
+  background-image: -o-linear-gradient(top, #a8a8a8, #b8b8b8);
+  background-image: linear-gradient(to bottom, #a8a8a8, #b8b8b8);
+  text-decoration: none;
+}*/
+
+/*#centerthatshit {
+     width: 100%;
+     position: relative;
+     margin:0 auto;
+}
+
+/*.btn {
   background: #e503fa;
   background-image: -webkit-linear-gradient(top, #e503fa, #c400ad);
   background-image: -moz-linear-gradient(top, #e503fa, #c400ad);
@@ -174,4 +318,4 @@ textarea{
   background-image: -o-linear-gradient(top, #a8a8a8, #b8b8b8);
   background-image: linear-gradient(to bottom, #a8a8a8, #b8b8b8);
   text-decoration: none;
-}
+}*/
