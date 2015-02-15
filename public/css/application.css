@@ -1,8 +1,15 @@
 #main-container{
+<<<<<<< HEAD
    width:1000px;
    margin:0 auto;
    background: white;
    border-radius: 5px;
+=======
+   width:1200px;
+   height:500px;
+   margin:0 auto;
+   background: grey;
+>>>>>>> views
 }
 
 #header{
@@ -13,20 +20,18 @@
   border-top:1px solid gray;
   border-left:1px solid gray;
   border-right:1px solid gray;
-
 }
 
 #footer{
   position:relative;
 	height:50px;
 	width:100%;
-
-
 }
+
 IMG.displayed {
     display: block;
     margin-left: auto;
-    margin-right: auto 
+    margin-right: auto
 }
 
 #index-contrainer{
@@ -130,4 +135,51 @@ textarea{
 #survey-table-container{
 
   width:200px;
+}
+
+
+#index-contrainer{
+   position:relative;
+   margin:0 auto;
+
+
+}
+
+#survey-view {
+
+	width:70%;
+	float:rigth;
+}
+
+.question-answer{
+   display: none;
+
+}
+
+.btn {
+  background: #e503fa;
+  background-image: -webkit-linear-gradient(top, #e503fa, #c400ad);
+  background-image: -moz-linear-gradient(top, #e503fa, #c400ad);
+  background-image: -ms-linear-gradient(top, #e503fa, #c400ad);
+  background-image: -o-linear-gradient(top, #e503fa, #c400ad);
+  background-image: linear-gradient(to bottom, #e503fa, #c400ad);
+  -webkit-border-radius: 28;
+  -moz-border-radius: 28;
+  border-radius: 28px;
+  font-family: Arial;
+  color: #000000;
+  font-size: 20px;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+  float:left;
+}
+
+.btn:hover {
+  background: #a8a8a8;
+  background-image: -webkit-linear-gradient(top, #a8a8a8, #b8b8b8);
+  background-image: -moz-linear-gradient(top, #a8a8a8, #b8b8b8);
+  background-image: -ms-linear-gradient(top, #a8a8a8, #b8b8b8);
+  background-image: -o-linear-gradient(top, #a8a8a8, #b8b8b8);
+  background-image: linear-gradient(to bottom, #a8a8a8, #b8b8b8);
+  text-decoration: none;
 }

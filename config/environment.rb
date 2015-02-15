@@ -20,6 +20,8 @@ require "sinatra/reloader" if development?
 
 require 'bcrypt'
 
+require 'securerandom'
+
 require 'erb'
 
 # Some helper constants for path-centric logic
@@ -37,6 +39,9 @@ configure do
 
   # Set the views to
   set :views, File.join(Sinatra::Application.root, "app", "views")
+
+  # Set method overrides
+  set :method_override, true
 end
 
 # Set up the controllers and helpers

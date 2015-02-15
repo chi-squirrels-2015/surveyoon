@@ -14,13 +14,13 @@ $(document).ready(function() {
     })
   })
 
-  $("#create-frm").on('click', '#add_answer_option', function(event) {
+  // Kevin Edit: I changed it to "document" instead of "#create-frm"
+  $(document).on('click', '#add_answer_option', function(event) {
     event.preventDefault();
     $("#answer_choices_div").append("<p><input type='text' name='answer[]' placeholder='Choice'><a id='delete_answer' href='#'><img src='https://www.chicobag.com/images/minus_icon.gif'></a></p>");
   })
 
   // Kevin Edit
-  // We could use this and then we can take the id off of the submit button in the views
   $("#create-frm").on('submit', '#questions_and_answers_form', function(event) {
     event.preventDefault();
     var payload = $(this).serialize();
@@ -41,8 +41,6 @@ $(document).ready(function() {
   $(".question-answer").on('click', '#delete_answer', function(event) {
     event.preventDefault();
     console.log("click has been received");
-    // console.log($(this));
-    // console.log($(this).parent("p"));
     $(this).parent("p").remove();
     $(this).remove();
   })
@@ -74,5 +72,28 @@ $(document).ready(function() {
       window.location = "/";
     });
   });
+
+  // Kevin edit - Confirming to edit the survey
+  $("#survey_edit_confirm_button").on("click", function(e) {
+    e.preventDefault();
+    $("#editing_confirmation").hide();
+    $(".question-answer").css("display", "block");
+  })
+
+ // Kevin Edit - Saving an edited question
+ $(".question-answer").on('submit', '#questions_and_answers_form', function(event) {
+  event.preventDefault();
+  var toDeleteForm = $(this);
+  var request = $.ajax({
+    url: $(this).attr("action"),
+    type: 'put',
+    data: $(this).serialize()
+  });
+
+  request.done(function(response) {
+    toDeleteForm.empty();
+    $(".question-answer").prepend(response);
+  })
+})
 
 });

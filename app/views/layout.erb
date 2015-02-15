@@ -19,25 +19,21 @@
 </head>
 <body>
   <div id="main-container">
-
     <div id="header">
-      <a href="/surveys"> <img class="displayed" src="http://i.imgur.com/DxKxwlS.png"></a>
-     <% if session[:user_id] %>  <!-- Kevin edit -->
-      <a id="sign-out" href="/sessions/<%= session[:user_id] %>">logout</a>
-     <% end %>
+      <a href="/"> <h1> SurveyYoon </h1> </a>
+      <% if @user %>
+      <a href="/logout">logout</a>
+      <% end %>
     </div>
-
-    <%# if session[:user_id] %>
-    <!-- <div id="welcome">
-      Welcome to Surveyoon <%#= @user.username %>! :D
-    </div> -->
-    <%# end %>
-
- <div id="centerthatshit"> <%= yield %> </div>
-
- <div id="footer">
-  Yoon Inc. Fortune 500 Company.
- </div>
-</div>
+    <% if @user %>
+    <div id="welcome">
+      Welcome to SurveyYoon <%= @user.username %>
+    </div>
+    <%end %>
+    <%= yield %>
+    <div id="footer">
+      Yoon Inc. Fortune 500 Compagny.
+    </div>
+  </div>
 </body>
 </html>
