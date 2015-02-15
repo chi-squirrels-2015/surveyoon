@@ -47,8 +47,12 @@ end
 
 get "/surveys/:survey_id/stats" do
   @current_survey = Survey.find(params[:survey_id])
-  @responses = @current_survey.responses
-  erb :"surveys/stats"
+
+  if @current_survey.responses.empty?
+    erb :"surveys/_empty_stats", locals: { current_survey: @current_survey }
+  else
+    erb :"surveys/stats"
+  end
 end
 
 
