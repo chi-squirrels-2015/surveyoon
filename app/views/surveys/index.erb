@@ -1,4 +1,4 @@
-<h2> Surveys Created </h2>
+<h3 id="greeting">Hello, <%= @user.username %>!</h3>
 <hr></hr>
 <br>
 
@@ -8,17 +8,24 @@
   <!-- <div id="survey-table-container"> -->
     <table id="survey-view">
       <tr>
-        <th>Name</th>
-        <th>Edit</th>
-        <th>Share</th>
-        <th>Stats</th>
+        <th>Surveys</th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
       </tr>
       <% @user.surveys.each do |survey| %> <!-- Kevin Edit -->
       <tr>
-        <td><a href="/surveys/<%=survey.id%>"><%=survey.title%></a>
-          <td><a href="/surveys/<%=survey.id%>/edit">edit</a></td>
-          <td><a href="/surveys/<%= survey.id %>/share?survey_key=<%= survey.random_code %>">share</a></td>
-          <td><a href="/surveys/<%= survey.id %>/stats">stats</a></td>
+          <td id="fixed-width"><%=survey.title%></td>
+          <td><a class="manipulate-survey-buttons" href="/surveys/<%= survey.id %>/edit">Edit</a></td>
+          <td>
+            <form action="/surveys/<%= survey.id %>" method="POST">
+              <input type="hidden" name="_method" value="DELETE">
+              <input class="manipulate-survey-buttons" type="submit" value="Delete">
+            </form>
+          </td>
+          <td><a class="manipulate-survey-buttons" href="/surveys/<%= survey.id %>/share?survey_key=<%= survey.random_code %>">Share</a></td>
+          <td><a class="manipulate-survey-buttons" href="/surveys/<%= survey.id %>/stats">Stats</a></td>
         <%end%>
       </tr>
     </table>

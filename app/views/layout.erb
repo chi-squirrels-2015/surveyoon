@@ -8,16 +8,19 @@
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script src="/js/application.js"></script>
 
-  <title>Survey Yoon Best surveys in the yoonworld</title>
+  <title>SurveYoon: The Best Surveys in the Yooniverse</title>
 </head>
+
 <body>
-  <div id="main-container">
+  <div class="main-container">
     <div id="header">
       <a href="/surveys"><h1>SURVEYOON</h1></a>
-      <% if @user %>
-        <a id="sign-out" href="/sessions/<%= session[:user_id] %>">Logout</a>
-      <% end %>
+      <h3>The Best Surveys in the Yooniverse</h3>
     </div>
+      <% if @user %>
+        <div id="sign-out"><a href="/sessions/<%= session[:user_id] %>">Logout</a></div>
+        <div id="sign-out"><a href="/surveys %>">Home</a></div>
+      <% end %>
     <%= yield %>
   </div>
 </body>
