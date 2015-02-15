@@ -1,0 +1,5 @@
+<!-- Jane Edit -->
+
+<p>It looks like your survey, <%= current_survey.title %> hasn't been completed yet. Share your survey using this share safe url: </p>
+
+<a href="surveys/<%= current_survey.id %>/share?survey_key=<%= current_survey.random_code %>"><u>surveys/<%= current_survey.id %>/share?survey_key=<%= @current_survey.random_code %></u></a>
