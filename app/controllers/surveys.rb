@@ -59,4 +59,3 @@ def ensure_logged_in
   end
 end
 
-

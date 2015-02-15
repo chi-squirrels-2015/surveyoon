@@ -1,23 +1,27 @@
 <h2> Surveys Created </h2>
-<div id="survey-ctnt">
-  <div id="left-btn">
-    <a href="/surveys/new" class="btn"> Create a Survey !</a>
-  </div>
-<div id="survey-table-container">
-  <table id="survey-view">
-    <tr>
-      <th>Name</th>
-      <th>Edit</th>
-      <th>Share</th>
-      <th>Stats</th>
-    </tr>
-      <% @user.surveys.each do |survey| %> <!-- Kevin Edit -->
-      <td><a href="/surveys/<%=survey.id%>"><%=survey.title%></a>
-        <td><a href="/surveys/<%=survey.id%>/edit">edit</a></td>
-        <td><a href="/surveys/<%= survey.id %>/share?survey_key=<%= survey.random_code %>">share</a></td>
-        <td><a href="/surveys/<%= survey.id %>/stats">stats</a></td>
+<hr></hr>
+<br>
+
+<a id="create-survey-button" href="/surveys/new" class="btn"><span>Create a New Survey</span></a>
+
+
+  <!-- <div id="survey-table-container"> -->
+    <table id="survey-view">
+      <tr>
+        <th>Name</th>
+        <th>Edit</th>
+        <th>Share</th>
+        <th>Stats</th>
       </tr>
-      <%end%>
+      <% @user.surveys.each do |survey| %> <!-- Kevin Edit -->
+      <tr>
+        <td><a href="/surveys/<%=survey.id%>"><%=survey.title%></a>
+          <td><a href="/surveys/<%=survey.id%>/edit">edit</a></td>
+          <td><a href="/surveys/<%= survey.id %>/share?survey_key=<%= survey.random_code %>">share</a></td>
+          <td><a href="/surveys/<%= survey.id %>/stats">stats</a></td>
+        <%end%>
+      </tr>
     </table>
-   </div>
-  </div>
+  <!-- </div> -->
+
+</div>
