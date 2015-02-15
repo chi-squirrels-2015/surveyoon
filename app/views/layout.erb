@@ -1,15 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!--
-    normalize.css removes cross-browser differences in defaults, e.g.,
-    differences in how form elements appear between Firefox and IE
-    See: http://necolas.github.com/normalize.css/
-  -->
+
   <link rel="stylesheet" href="/css/normalize.css">
-  <!--
-    application.css is where you put your styles
-  -->
   <link rel="stylesheet" href="/css/application.css">
 
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
@@ -20,15 +13,12 @@
 <body>
   <div id="main-container">
     <div id="header">
-      <a href="/surveys"> <h1> SurveyYoon </h1> </a>
+      <a href="/surveys"><h1>SurveyYoon</h1></a>
       <% if @user %>
-      <a id="sign-out" href="/sessions/<%= session[:user_id] %>">logout</a>
+        <a id="sign-out" href="/sessions/<%= session[:user_id] %>">Logout</a>
       <% end %>
     </div>
     <%= yield %>
-    <div id="footer">
-      Yoon Inc. Fortune 500 Compagny.
-    </div>
   </div>
 </body>
 </html>

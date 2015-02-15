@@ -20,11 +20,8 @@ require "sinatra/reloader" if development?
 
 require 'bcrypt'
 
-<<<<<<< HEAD
 require 'securerandom'
 
-=======
->>>>>>> created models, migration, associations, and seed
 require 'erb'
 
 # Some helper constants for path-centric logic
