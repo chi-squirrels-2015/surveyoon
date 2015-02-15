@@ -22,7 +22,7 @@
     <div id="header">
       <a href="/surveys"> <h1> SurveyYoon </h1> </a>
       <% if @user %>
-      <a href="/logout">logout</a>
+      <a id="sign-out" href="/sessions/<%= session[:user_id] %>">logout</a>
       <% end %>
     </div>
     <%= yield %>
