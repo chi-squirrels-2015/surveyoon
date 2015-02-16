@@ -1,6 +1,9 @@
-<h2><%= @current_survey.title %></h2>
+<h1><%= @current_survey.title %></h1>
+<hr></hr>
+<br>
 
-<p>This survey has been taken <%= @current_survey.times_taken %> times.</p>
+<p id="survey-count">This survey has been taken <%= @current_survey.times_taken %> times.</p>
+<br>
 
 <ol>
 <% @current_survey.questions.each do |question| %>

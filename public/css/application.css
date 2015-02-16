@@ -1,9 +1,15 @@
-/* ==== LAYOUT ERB ==== */
+/* =========================================== */
+/* ==== LAYOUT.ERB :: overall for the app ==== */
+/* =========================================== */
 
 @font-face {
   font-family: "Hallo";
   src: url(Hallosans.eot);
   src: local('Hallo sans'), url(HallosansBlack.otf) format('opentype');
+}
+
+h1 {
+  font-family: Futura;
 }
 
 * {
@@ -24,7 +30,6 @@ a {
 }
 
 #header {
-  /*border: 1px solid black;*/
   position: relative;
   height: 150px;
   width: 100%;
@@ -73,8 +78,9 @@ IMG.displayed {
 }
 
 
-
-/* === LOGIN AND SIGNUP === */
+/* ===================================== */
+/* === LOGIN.ERB :: login and signup === */
+/* ===================================== */
 
 #login-form input {
   font-family: "Arial";
@@ -122,11 +128,17 @@ h3 {
 }
 
 
+/* ============================================= */
+/* === SURVEYS/INDEX.ERB :: show all surveys === */
+/* ============================================= */
 
-/* === INDEX PAGE AFTER LOGIN === */
+.container {
+  border: 1px solid black;
+  background-color: yellow;
+}
 
 #greeting {
-  font-family: Georgia;
+  font-family: Futura;
   font-size: 25px;
   width: 50%;
 }
@@ -137,13 +149,17 @@ h3 {
 }
 
 #survey-view th {
-  padding: 10px;
+  font-family: Helvetica;
   border-bottom: 1px solid black;
+  padding: 10px;
+  font-size: 17px;
 }
 
 #survey-view td {
+  font-family: Georgia;
   padding: 10px;
   text-align: center;
+  font-size: 16px;
 }
 
 #fixed-width {
@@ -175,6 +191,7 @@ h3 {
 }
 
 .manipulate-survey-buttons {
+  font-family: Futura;
   border: 0px solid black;
   /* Jane's edits -- put this in here to trick the input styling on the form */
   -webkit-border-radius: 20;
@@ -188,27 +205,27 @@ h3 {
 
 
 
-/* For viewing the survey on survey/view  KEVIN EDITED */
+/* ============================================== */
+/* === SURVEYS/NEW.ERB :: creating new survey === */
+/* ============================================== */
 
 .question-answer{
   display: none;
 }
 
-input[type="radio"] {
-  margin-left: 10px;
-  margin-right: 5px;
-}
-
-#stats_table {
-  border: 1px solid black;
-}
-
-#stats_table td {
-  border: 1px solid black;
+#create-frm {
+  font-family: Helvetica;
 }
 
 #create-frm h4 {
-  font-size: 17px;
+  font-family: Helvetica;
+  font-size: 18px;
+}
+
+#create-frm h3 {
+  font-family: Helvetica;
+  font-size: 16px;
+  font-weight: bold;
 }
 
 #create-frm input {
@@ -249,34 +266,172 @@ textarea {
   -webkit-box-shadow: inset 0px 1px 4px #ECECEC;
 }
 
-#create-frm h3 {
-  font-weight: bold;
-  font-size: 22px;
-  font-family: Arial;
-}
-
 #for_appending h4 {
   font-size: 16px;
   font-family: Arial;
 }
 
 
-/*#survey-table-container{
-  width:200px;
+/* ============================================== */
+/* === SURVEYS/VIEW.ERB :: view single survey === */
+/* ============================================== */
+
+/* For viewing the survey on survey/view  KEVIN EDITED */
+
+/*.survey_layout h1 {
+  font-family: Futura;
 }*/
 
-/*#index-contrainer{
-  position:relative;
-  margin:0 auto;
-}*/
+input[type="radio"] {
+  margin-left: 10px;
+  margin-right: 5px;
+}
 
-/*#survey-view {
-  width:70%;
-  float:rigth;
-}*/
+.survey_layout li {
+  list-style-type: none;
+}
 
-.question-answer{
-  display: none;
+#question-query {
+  font-family: Helvetica;
+  font-size: 16px;
+}
+
+#submit-response-button {
+  font-family: Futura;
+  font-size: 16px;
+  border: 0px solid black;
+ -webkit-border-radius: 20;
+  -moz-border-radius: 20;
+  border-radius: 5px;
+  background: #F78D3F;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+  margin-right: 50px;
+  margin-bottom: 0px;
+}
+
+
+
+/* ======================================= */
+/* === SURVEYS/EDIT.ERB :: edit survey === */
+/* ======================================= */
+
+#editing_confirmation h3 {
+  /*font-weight: normal;*/
+  font-family: Arial;
+  font-size: 18px;
+}
+
+.question-answer h3 {
+  /*font-weight: normal;*/
+  font-family: Arial;
+  font-size: 18px;
+}
+
+#survey_edit_confirm_button {
+  vertical-align: top;
+  font-family: Futura;
+  border: 0px solid black;
+  border-radius: 5px;
+  background: #F78D3F;
+  font-size: 20px;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+  float: left;
+  margin-right: 50px;
+  margin-bottom: 0px;
+}
+
+#survey_edit_home_button {
+  vertical-align: top;
+  font-family: Futura;
+  border: 0px solid black;
+  border-radius: 5px;
+  background: #F78D3F;
+  font-size: 20px;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+  float: left;
+  margin-right: 50px;
+  margin-bottom: 0px;
+}
+
+#questions_and_answers_form input {
+  font-family: "Arial";
+  border: 1px solid #DADADA;
+  border-radius: 2px;
+  color: #888;
+  height: 30px;
+  width: 350px;
+  margin-bottom: 5px;
+  margin-right: 6px;
+  margin-top: 2px;
+  outline: 0 none;
+  padding: 3px 3px 3px 5px;
+  font-size: 16px;
+  line-height:15px;
+  box-shadow: inset 0px 1px 2px #ECECEC;
+  -moz-box-shadow: inset 0px 1px 4px #ECECEC;
+  -webkit-box-shadow: inset 0px 1px 4px #ECECEC;
+}
+
+#add_answer_option {
+  -webkit-appearance: button;
+  -webkit-box-shadow: inset 0px 1px 4px #ECECEC;
+  font-family: Arial;
+  color: #888;
+  text-align: center;
+  border-radius: 2px;
+  border: 1px solid #DADADA;
+  height: 25px;
+  width: 340px;
+  margin-right: 6px;
+  margin-top: 2px;
+  outline: 0 none;
+  padding: 3px 3px 3px 5px;
+  font-size: 16px;
+  line-height: 15px;
+}
+
+
+
+/* ================================================= */
+/* === SURVEYS/STATS.ERB :: viewing survey stats === */
+/* ================================================= */
+
+#stats-survey-title {
+  font-size: 30px;
+}
+
+#stats_table {
+  border-bottom: 1px solid black;
+  width: 600px;
+  text-align: center;
+}
+
+#stats_table th {
+  border-bottom: 1px solid black;
+  font-family: Helvetica;
+  height: 30px;
+  background-color:
+}
+
+#stats_table td {
+  /*border: 1px solid black;*/
+  height: 30px;
+}
+
+#stats_table tr:nth-child(even) {
+  background-color: #E8EDE0;
+}
+
+#survey-count {
+  font-size: 18px;
+}
+
+li h4 {
+  font-family: Helvetica;
+  font-size: 18px;
 }
 
 
@@ -293,6 +448,20 @@ textarea {
      width: 100%;
      position: relative;
      margin:0 auto;
+}*/
+
+/*#survey-table-container{
+  width:200px;
+}*/
+
+/*#index-contrainer{
+  position:relative;
+  margin:0 auto;
+}*/
+
+/*#survey-view {
+  width:70%;
+  float:rigth;
 }*/
 
 /*input {
