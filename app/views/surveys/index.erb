@@ -14,7 +14,7 @@
         <th></th>
         <th></th>
       </tr>
-      <% @user.surveys.each do |survey| %> <!-- Kevin Edit -->
+      <% @user.surveys.each do |survey| %>
       <tr>
           <td id="fixed-width"><%=survey.title%></td>
           <td><a class="manipulate-survey-buttons" href="/surveys/<%= survey.id %>/edit">Edit</a></td>
@@ -24,6 +24,7 @@
               <input class="manipulate-survey-buttons" type="submit" value="Delete">
             </form>
           </td>
+          <!-- Kevin Sunday Edit: There was a pound sign right after "survey_key=" that made the comparison on the controller side not work -->
           <td><a class="manipulate-survey-buttons" href="/surveys/<%= survey.id %>/share?survey_key=<%= survey.random_code %>">Share</a></td>
           <td><a class="manipulate-survey-buttons" href="/surveys/<%= survey.id %>/stats">Stats</a></td>
         <%end%>

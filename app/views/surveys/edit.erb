@@ -3,31 +3,26 @@
 <br>
 
 <div id="editing_confirmation">
-  <h3>Editing this survey after responses have been taken will make your statistics incorrect. <br>Are you sure you want to continue?</h3>
+  <h3>WARNING! Editing this survey "<%= @current_survey.title %>" after responses have been taken will make your statistics incorrect.</h3>
+  <h3>Are you sure you want to continue?</h3>
   <br>
   <button id="survey_edit_confirm_button">Confirm</button>
   <br><br>
 </div>
 
+<div class="title_edit">
+  <form id="edit_title_form" method="POST" action="/surveys/<%= @current_survey.id %>">
+    <input type="hidden" name="_method" value="put"/>
+    <input type="text" name="title" value="<%= @current_survey.title %>">
+    <input type="submit" value="Save Title Edit">
+  </form>
+</div>
 
 <div class="question-answer">
-  <h3>All saved changes will appear at the top of the page.</h3>
 
   <% @current_survey.questions.each do |question| %>
 
-  <form id="questions_and_answers_form" method="POST" action="/questions/<%= question.id %>">
-    <input type="hidden" name="_method" value="put"/>
-    <p><textarea rows="3" cols="20" name="query" placeholder="Your question here"><%= question.query %></textarea></p>
-
-    <div id="answer_choices_div">
-      <% question.answers.each do |answer| %>
-      <p><input type='text' name='answer[]' placeholder='Choice' value=<%= answer.choice %>><a id='delete_answer' href='#'><img src='https://www.chicobag.com/images/minus_icon.gif'></a></p>
-      <% end %>
-    </div>
-
-    <p><a href="#" id="add_answer_option">Add Answer Choices</a></p>
-    <p><input type="submit" value="Save Question Edits"></p>
-  </form>
+  <%= erb :"surveys/_saved_question", locals: { question: question } %>
 
 <% end %>
 

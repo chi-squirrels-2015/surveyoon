@@ -1,6 +1,10 @@
 post "/responses" do
-  survey_id = params.first.first.to_i
-  current_survey = Survey.find(survey_id)
+  puts "LOOK HERE FOR PUTSSSS"
+  puts params
+  puts params.first.first.to_i
+  question_id = params.first.first.to_i
+  reference_question = Question.find(question_id)
+  current_survey = reference_question.survey
   current_survey.times_taken += 1
   current_survey.save
 

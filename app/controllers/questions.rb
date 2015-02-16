@@ -13,6 +13,18 @@ post "/questions" do
 
 end
 
+# Kevin Sunday Edit: Route when they click the edit question button on making a new survey
+get "/questions/:question_id/edit" do
+  @question = Question.find(params[:question_id])
+
+  if request.xhr?
+    erb :"surveys/_question_edit_form", locals: { question: @question }, layout: false
+  else
+    erb :"surveys/new"
+  end
+
+end
+
 put "/questions/:question_id" do
   ensure_logged_in
 
@@ -24,7 +36,6 @@ put "/questions/:question_id" do
     @question.answers << Answer.create(choice: answer)
   end
 
-  puts
   if request.xhr?
     erb :"surveys/_saved_question", locals: { question: @question }, layout: false
   else

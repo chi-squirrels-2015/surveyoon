@@ -1,8 +1,13 @@
-<h3><%= @question.query %></h3>
+<div class="saved_question_answer">
+
+<h3>Question: <%= question.query %></h3>
 
 <ol>
-  <% @question.answers.each do |answer| %>
+  <% question.answers.each do |answer| %>
     <li><%= answer.choice %></li>
   <% end %>
 </ol>
 
+  <a id="edit_question_button" href="/questions/<%= question.id %>/edit" value="<%= question.id %>">Edit Question</a>
+
+</div>

@@ -18,10 +18,9 @@
       <a href="/surveys"><h1>SURVEYOON</h1></a>
       <h3>The Best Surveys in the Yooniverse</h3>
     </div>
-
-      <% if session[:user_id] %>
-        <div id="sign-out"><a href="/sessions/<%= session[:user_id] %>">Logout</a></div>
-        <div id="sign-out"><a href="/surveys">Home</a></div>
+      <% if @user %>
+        <div id="user_buttons"><a id="sign-out" href="/sessions/<%= session[:user_id] %>">Logout</a></div>
+        <div id="user_buttons"><a href="/surveys">Home</a></div>
       <% end %>
 
     <%= yield %>
