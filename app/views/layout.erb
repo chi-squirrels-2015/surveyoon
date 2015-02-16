@@ -13,16 +13,21 @@
 
 <body>
   <div class="main-container">
+
     <div id="header">
       <a href="/surveys"><h1>SURVEYOON</h1></a>
       <h3>The Best Surveys in the Yooniverse</h3>
     </div>
-      <% if @user %>
+
+      <% if session[:user_id] %>
         <div id="sign-out"><a href="/sessions/<%= session[:user_id] %>">Logout</a></div>
-        <div id="sign-out"><a href="/surveys %>">Home</a></div>
+        <div id="sign-out"><a href="/surveys">Home</a></div>
       <% end %>
+
     <%= yield %>
+
   </div>
+
 <br><br><br><br>
 </body>
 </html>

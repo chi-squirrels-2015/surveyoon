@@ -10,7 +10,7 @@ $(document).ready(function() {
 
     request.done(function(response) {
       $("#create_survey_form").hide();
-      $("#create-frm").prepend("<h3> Survey: " + response.title + "</h3>");
+      $("#create-frm").prepend("<h4> Survey: " + response.title + "</h4>");
       $(".question-answer").css("display", "block");
     })
   })
@@ -32,7 +32,7 @@ $(document).ready(function() {
     });
 
     request.done(function(response) {
-      $("#for_appending").append("<h4> Question: " + response + "</h4>");
+      $("#for_appending").append(response);
       $("#questions_and_answers_form").each(function(){
         this.reset();
       })

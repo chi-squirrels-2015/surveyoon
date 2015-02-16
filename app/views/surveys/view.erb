@@ -6,6 +6,7 @@
 
   <% if session[:user_id] %>
     <p>Share your survey using this share-safe url: <a href="/surveys/<%= @survey.id %>/share?survey_key=<%= @survey.random_code %>"><u>/surveys/<%= @survey.id %>/share?survey_key=<%= @survey.random_code %></u></a></p>
+    <br>
   <% end %>
 
 
@@ -18,7 +19,7 @@
     <br>
     <% end %>
     <br>
-    <input type="submit" value="Submit Response">
+    <input id="submit-response-button" type="submit" value="Submit Response">
   </form>
 
 </div>
