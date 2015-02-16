@@ -32,7 +32,7 @@ $(document).ready(function() {
     });
 
     request.done(function(response) {
-      $("#for_appending").append("<h4>" + response + "</h4>");
+      $("#for_appending").append("<h4> Question: " + response + "</h4>");
       $("#questions_and_answers_form").each(function(){
         this.reset();
       })

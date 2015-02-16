@@ -1,4 +1,4 @@
-/* ==== LAYOUT ERB ==== */
+/* ==== LAYOUT.ERB :: overall for the app ==== */
 
 @font-face {
   font-family: "Hallo";
@@ -24,7 +24,6 @@ a {
 }
 
 #header {
-  /*border: 1px solid black;*/
   position: relative;
   height: 150px;
   width: 100%;
@@ -73,8 +72,9 @@ IMG.displayed {
 }
 
 
-
-/* === LOGIN AND SIGNUP === */
+/* ===================================== */
+/* === LOGIN.ERB :: login and signup === */
+/* ===================================== */
 
 #login-form input {
   font-family: "Arial";
@@ -122,11 +122,17 @@ h3 {
 }
 
 
+/* ========================================================= */
+/* === SURVEYS/INDEX.ERB :: show all surveys after login === */
+/* ========================================================= */
 
-/* === INDEX PAGE AFTER LOGIN === */
+.container {
+  border: 1px solid black;
+  background-color: yellow;
+}
 
 #greeting {
-  font-family: Georgia;
+  font-family: Futura;
   font-size: 25px;
   width: 50%;
 }
@@ -137,13 +143,17 @@ h3 {
 }
 
 #survey-view th {
-  padding: 10px;
+  font-family: Helvetica;
   border-bottom: 1px solid black;
+  padding: 10px;
+  font-size: 17px;
 }
 
 #survey-view td {
-  padding: 10px;
+  font-family: Helvetica;
+  padding: 12px;
   text-align: center;
+  font-size: 16px;
 }
 
 #fixed-width {
@@ -175,6 +185,7 @@ h3 {
 }
 
 .manipulate-survey-buttons {
+  font-family: Futura;
   border: 0px solid black;
   /* Jane's edits -- put this in here to trick the input styling on the form */
   -webkit-border-radius: 20;
@@ -188,27 +199,22 @@ h3 {
 
 
 
-/* For viewing the survey on survey/view  KEVIN EDITED */
+/* ============================================== */
+/* === SURVEYS/NEW.ERB :: creating new survey === */
+/* ============================================== */
 
 .question-answer{
   display: none;
 }
 
-input[type="radio"] {
-  margin-left: 10px;
-  margin-right: 5px;
-}
-
-#stats_table {
-  border: 1px solid black;
-}
-
-#stats_table td {
-  border: 1px solid black;
-}
-
 #create-frm h4 {
-  font-size: 17px;
+  font-family: Futura;
+  font-size: 18px;
+}
+
+#create-frm h3 {
+  font-weight: bold;
+  font-family: Futura;
 }
 
 #create-frm input {
@@ -249,35 +255,50 @@ textarea {
   -webkit-box-shadow: inset 0px 1px 4px #ECECEC;
 }
 
-#create-frm h3 {
-  font-weight: bold;
-  font-size: 22px;
-  font-family: Arial;
-}
-
 #for_appending h4 {
   font-size: 16px;
   font-family: Arial;
 }
 
 
-/*#survey-table-container{
-  width:200px;
-}*/
+/* ===================================================== */
+/* === SURVEYS/VIEW.ERB :: viewing individual survey === */
+/* ===================================================== */
 
-/*#index-contrainer{
-  position:relative;
-  margin:0 auto;
-}*/
+/* For viewing the survey on survey/view  KEVIN EDITED */
 
-/*#survey-view {
-  width:70%;
-  float:rigth;
-}*/
 
-.question-answer{
-  display: none;
+input[type="radio"] {
+  margin-left: 10px;
+  margin-right: 5px;
 }
+
+.survey_layout li {
+  list-style-type: none;
+}
+
+#question-query {
+  font-family: Georgia;
+  font-size: 16px;
+}
+
+
+
+
+/* ================================================= */
+/* === SURVEYS/STATS.ERB :: viewing survey stats === */
+/* ================================================= */
+
+#stats_table {
+  border: 1px solid black;
+}
+
+#stats_table td {
+  border: 1px solid black;
+}
+
+
+
 
 
 
@@ -293,6 +314,20 @@ textarea {
      width: 100%;
      position: relative;
      margin:0 auto;
+}*/
+
+/*#survey-table-container{
+  width:200px;
+}*/
+
+/*#index-contrainer{
+  position:relative;
+  margin:0 auto;
+}*/
+
+/*#survey-view {
+  width:70%;
+  float:rigth;
 }*/
 
 /*input {

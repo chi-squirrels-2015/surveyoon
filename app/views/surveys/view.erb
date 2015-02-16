@@ -2,20 +2,23 @@
 
 <div class="survey_layout">
   <h1><%= @survey.title %></h1>
+  <hr></hr>
 
   <% if session[:user_id] %>
-    <p>Share your survey using this unique url: "/surveys/<%= @survey.id %>/share?survey_key=<%= @survey.random_code %>"</p>
+    <p>Share your survey using this share-safe url: <a href="/surveys/<%= @survey.id %>/share?survey_key=<%= @survey.random_code %>"><u>/surveys/<%= @survey.id %>/share?survey_key=<%= @survey.random_code %></u></a></p>
   <% end %>
+
 
   <form method="POST" action="/responses">
     <% @survey.questions.each do |question| %>
-    <h3><%= question.query %></h3>
+    <h3 id="question-query"><%= question.query %></h3>
     <% question.answers.each do |answer| %>
-    <input type="radio" name=<%= question.id %> value=<%= answer.id %>><%= answer.choice %>
+      <li><input type="radio" name=<%= question.id %> value=<%= answer.id %>><%= answer.choice %></li>
     <% end %>
     <br>
     <% end %>
     <br>
     <input type="submit" value="Submit Response">
   </form>
+
 </div>
