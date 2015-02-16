@@ -2,29 +2,36 @@
 <hr></hr>
 <br>
 
+
+<!-- Kevin Edit: Added this conditional to check if there are no stats for the survey or not -->
+<% if @responses == [] %>
+  <p>No stats for this survey yet. Go out and share your survey!</p>
+<% else %>
+
 <p id="survey-count">This survey has been taken <%= @current_survey.times_taken %> times.</p>
 <br>
 
 <ol>
-<% @current_survey.questions.each do |question| %>
+  <% @current_survey.questions.each do |question| %>
   <li><h4><%= question.query %></h4></li>
 
-    <table id="stats_table">
-      <thead>
-        <th>Answer Choices</th>
-        <th>Times Selected</th>
-        <th>Percantage Selected</th>
-      </thead>
+  <table id="stats_table">
+    <thead>
+      <th>Answer Choices</th>
+      <th>Times Selected</th>
+      <th>Percantage Selected</th>
+    </thead>
 
-      <% question.answers.each do |answer| %>
-        <tr>
-          <td><%= answer.choice %></td>
-          <td><%= answer.responses.count %></td>
-          <td><%= ((answer.responses.count.to_f / @current_survey.times_taken.to_f) * 100).floor %>%</td>
-        </tr>
-      <% end %>
-    </table>
+    <% question.answers.each do |answer| %>
+    <tr>
+      <td><%= answer.choice %></td>
+      <td><%= answer.responses.count %></td>
+      <td><%= ((answer.responses.count.to_f / @current_survey.times_taken.to_f) * 100).floor %>%</td>
+    </tr>
+    <% end %>
+  </table>
   <br>
-<% end %>
+  <% end %>
 </ol>
 
+<% end %>

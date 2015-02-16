@@ -58,7 +58,8 @@ a {
   width: 100%;
 }
 
-#sign-out {
+/* Kevin Sunday Edit: just changed it from sign-out to user_buttons*/
+#user_buttons {
   display: inline-block;
   vertical-align: top;
   float: right;
@@ -434,7 +435,11 @@ li h4 {
   font-size: 18px;
 }
 
+/* KEVIN SUNDAY EDIT */
 
+.title_edit {
+  display: none;
+}
 
 
 
